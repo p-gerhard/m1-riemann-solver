@@ -69,7 +69,6 @@ double m1_s1_get_chi_interp(const double r)
 	double num = p[0];
 	double den = q[0];
 
-#pragma unroll
 	for (unsigned int i = 1; i < 7; i++) {
 		num = num * r_abs + p[i];
 		den = den * r_abs + q[i];
@@ -136,9 +135,10 @@ int main(int argc, char *argv[])
 	/* Dump solution */
 	const char filename[1024] = "u_ex_s2.out";
 	dump_solution(filename, mesh, u_ex, N);
-
+	printf("Data exported in: %s\n", filename);
+	
 	free(mesh);
 	free(u_ex);
-	// SolutionTrace(1);
+
 	return EXIT_SUCCESS;
 }
