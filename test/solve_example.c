@@ -12,8 +12,13 @@
 
 #include "m1_riemann.h"
 
+/* Declared as extern in m1_riemann.h */
 double (*get_chi)(const double);
 
+/*
+ * Eddington factor chi(r) for the moments computed on the unit sphere S^2.
+ * We use a rational interpolation or order 7.
+ */
 static double m1_s2_get_chi_interp(const double r)
 {
 	double r_abs = fabs(r);
@@ -38,6 +43,39 @@ static double m1_s2_get_chi_interp(const double r)
 	}
 
 	double chi = fmin(num / den, 1. - 1e-4);
+
+	return chi;
+}
+
+/*
+ * Eddington factor chi(r) for the moments computed on the unit cicle S^1.
+ * We use a rational interpolation or order 7.
+ */
+double m1_s1_get_chi_interp(const double r)
+{
+	double r_abs = fabs(r);
+
+	if (r_abs > 1 - 1e-4)
+		return 1 - 1e-4;
+
+	double p[7] = { 0.081997371844,	 -0.311258505782, 0.921417673004,
+					-2.177908221701, 2.930698162883,  -1.944182261747,
+					0.500000947627 };
+
+	double q[7] = { -0.323970518048, 1.306311165212, -1.057275075050,
+					-2.394912664257, 5.358815439044, -3.888203179227,
+					1.000000000000 };
+
+	double num = p[0];
+	double den = q[0];
+
+#pragma unroll
+	for (unsigned int i = 1; i < 7; i++) {
+		num = num * r_abs + p[i];
+		den = den * r_abs + q[i];
+	}
+
+	double chi = fmin(num / den, 1 - 1e-4);
 
 	return chi;
 }
