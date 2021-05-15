@@ -14,14 +14,14 @@
 
 #include "m1_riemann.h"
 
-#define M1_R_ABS_MAX_VALUE 			0.99
+#define M1_R_ABS_MAX_VALUE          0.99
 
-#define GSL_DERIV_STEP 					1E-6
-#define GSL_BRENT_MAX_ITER 			100
-#define GSL_BRENT_ABS_TOL 			1E-5
-#define GSL_QAGS_MAX_ITERVALS 	1000
-#define GSL_QAGS_EPS_REL 				1E-4
-#define GSL_QAGS_EPS_ABS 				1E-4
+#define GSL_DERIV_STEP              1E-6
+#define GSL_BRENT_MAX_ITER          100
+#define GSL_BRENT_ABS_TOL           1E-5
+#define GSL_QAGS_MAX_ITERVALS       1000
+#define GSL_QAGS_EPS_REL            1E-4
+#define GSL_QAGS_EPS_ABS            1E-4
 
 /* Packed arguments structs for GSL function wrapper */
 struct args_pack2 {
@@ -295,7 +295,7 @@ static double get_invariant_qags(int i, const double rm, const double rp)
 	f.params = &i;
 
 	gsl_integration_qags(&f, rm, rp, GSL_QAGS_EPS_ABS, GSL_QAGS_EPS_REL,
-											 GSL_QAGS_MAX_ITERVALS, w, &res, &err);
+						 GSL_QAGS_MAX_ITERVALS, w, &res, &err);
 
 	gsl_integration_workspace_free(w);
 	return res;
@@ -309,7 +309,7 @@ static double get_invariant_qags(int i, const double rm, const double rp)
  *  - uR : right state
  */
 void solve_riemann(const double xi, const double uL[2], const double uR[2],
-									 double u[2])
+				   double u[2])
 {
 	double r;
 	double vp1L, vp1R, vp2L, vp2R;

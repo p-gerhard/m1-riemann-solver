@@ -11,6 +11,6 @@
 extern double (*get_chi)(const double);
 
 void solve_riemann(const double xi, const double uL[2], const double uR[2],
-									 double u[2]);
+				   double u[2]);
 
 #endif

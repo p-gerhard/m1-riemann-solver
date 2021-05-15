@@ -21,13 +21,13 @@ static double m1_s2_get_chi_interp(const double r)
 	if (r_abs > 1 - 1e-4)
 		return 1 - 1e-4;
 
-	const double p[7] = { 0.325269105027,	 -1.216531569434, 2.116995591837,
-												-2.514343153655, 2.271654209692,	-1.312060956603,
-												0.333333397667 };
+	const double p[7] = { 0.325269105027,  -1.216531569434, 2.116995591837,
+						  -2.514343153655, 2.271654209692,	-1.312060956603,
+						  0.333333397667 };
 
 	const double q[7] = { -0.327086152002, 1.253825802327, -0.780269389781,
-												-2.820874826259, 5.614892441680, -3.936171251864,
-												1.000000000000 };
+						  -2.820874826259, 5.614892441680, -3.936171251864,
+						  1.000000000000 };
 
 	double num = p[0];
 	double den = q[0];
@@ -43,7 +43,7 @@ static double m1_s2_get_chi_interp(const double r)
 }
 
 static int dump_solution(const char filename[1024], const double *x,
-												 const double *u, const int N)
+						 const double *u, const int N)
 {
 	FILE *f = fopen(filename, "w+");
 
@@ -90,13 +90,13 @@ int main(int argc, char *argv[])
 		u_ex[2 * k + 0] = u[0];
 		u_ex[2 * k + 1] = u[1];
 	}
-	
+
 	clock_t stop = clock();
-	double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;	
+	double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
 	printf("Elapsed time %f (s)\n", elapsed / 1000);
-	
+
 	/* Dump solution */
-	const char filename[1024] = "u_s2_riemann_exact.out";
+	const char filename[1024] = "u_ex_s2.out";
 	dump_solution(filename, mesh, u_ex, N);
 
 	free(mesh);
