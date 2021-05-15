@@ -90,13 +90,13 @@ int main(int argc, char *argv[])
 		u_ex[2 * k + 0] = u[0];
 		u_ex[2 * k + 1] = u[1];
 	}
-	
+
 	clock_t stop = clock();
-	double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;	
+	double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
 	printf("Elapsed time %f (s)\n", elapsed / 1000);
-	
+
 	/* Dump solution */
-	const char filename[1024] = "u_s2_riemann_exact.out";
+	const char filename[1024] = "u_ex_s2.out";
 	dump_solution(filename, mesh, u_ex, N);
 
 	free(mesh);
