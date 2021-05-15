@@ -7,7 +7,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose Release or Debug" FORCE)
 endif()
 
-# Build the lib
+# Build the library
 add_library(m1_riemann STATIC src/m1_riemann.c)
 
 target_include_directories(m1_riemann
