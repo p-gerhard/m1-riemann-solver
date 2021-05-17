@@ -79,6 +79,9 @@ double m1_s1_get_chi_interp(const double r)
 	return chi;
 }
 
+/*
+ * Dumb solution in a csv like file 
+ */
 static int dump_solution(const char filename[1024], const double *x,
 						 const double *u, const int N)
 {
