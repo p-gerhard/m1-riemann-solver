@@ -17,7 +17,7 @@ This project uses CMake and the GNU Scientific Library (GSL). To build on your h
 ### Example
 One example of how to use the solver is provided in `test` directory.
 
-## Plotting Example
+#### Plotting Examples
 A small python script using `numpy` and `matplotlib` packages is provided in `script` directory. 
 If you dont have the packages you can type :
 1. `cd script && pip3 install -r requirements.txt`
@@ -26,7 +26,8 @@ Finally, to plot the data you can type :
 
 2. `python3 plot_solution.py your_solution_data_file`
 
-A latex script `plot_latex_pgfplot.tex` is available in in `doc` directory. Edit the .tex file and type make to compile. Here the obtained results on two examples: 
+As an alternative, a latex script `plot_latex_pgfplot.tex` is available in `doc` directory. 
+Edit the .tex file and use `./doc/Makefile` to compile. Here the two generated outputs: 
 
 ![r1r2](doc/example_r1r2.png)
 
