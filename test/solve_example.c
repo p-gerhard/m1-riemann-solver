@@ -86,7 +86,8 @@ static int dump_solution(const char filename[1024], const double *x,
 
 	if (f != NULL) {
 		for (int i = 0; i < N; i++) {
-			fprintf(f, "%.12f, %.12f, %.12f\n", x[i], u[2 * i + 0], u[2 * i + 1]);
+			fprintf(f, "%.12f, %.12f, %.12f\n", x[i], u[2 * i + 0],
+					u[2 * i + 1]);
 		}
 		fclose(f);
 		return 0;
@@ -136,7 +137,7 @@ int main(int argc, char *argv[])
 	const char filename[1024] = "u_ex_s2.out";
 	dump_solution(filename, mesh, u_ex, N);
 	printf("Data exported in: %s\n", filename);
-	
+
 	free(mesh);
 	free(u_ex);
 
