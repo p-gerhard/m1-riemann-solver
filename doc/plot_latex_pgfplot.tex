@@ -1,0 +1,59 @@
+\documentclass[preview]{standalone}
+\usepackage[labelfont=bf,small]{caption}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\pgfplotsset{compat=newest}
+
+\renewcommand{\figurename}{Example}
+\setcounter{figure}{0}
+
+%EDIT FILENAME HERE
+\newcommand{\filename}{u_ex_s2.out}
+
+\begin{document}
+    \begin{figure}
+        \centering
+    \begin{tikzpicture}
+        \begin{axis}[width = 10cm,
+                    height = 8cm,
+                    xmin   = -1,
+                    xmax   =  1,
+                    xtick = {-1, -0.5, 0, 0.5, 1},
+                    grid   = both,
+                    grid style = dashed,
+                    xlabel = {$x$},
+                    ylabel = {$\mathbf{u}(x,t)$}]
+
+                        
+            %Plotting rho
+            \addplot[mark=none, color=blue] table[x index=0,
+                                                y index=1, 
+                                                col sep=comma]{\filename};
+            \addlegendentry{$\rho$}   
+
+            %Plotting I
+            \addplot[mark=none, color=red] table[x index=0,
+                                                y index=2, 
+                                                col sep=comma]{\filename};
+            \addlegendentry{$I$}   
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Case 1-Wave and 2-Wave. Depiction of the exact solution at $t=1$ 
+             for the initial Riemann problem:\leavevmode\\
+            \begin{minipage}{\linewidth}
+                \[
+                    \mathbf{u} = (\rho, I)_{|t=0} = 
+                    \begin{cases}
+                        (\rho_l, I_l),&\mbox{ if }x<0,\\
+                        (\rho_r, I_r),&\mbox{ if }x>0.
+                    \end{cases}
+                \]
+            \end{minipage}
+            Solution computed using $N=500$ discretization points on $x=[-1,1]$ 
+            interval.}
+    \end{figure}
+\end{document}

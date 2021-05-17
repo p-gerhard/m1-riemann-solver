@@ -86,7 +86,7 @@ static int dump_solution(const char filename[1024], const double *x,
 
 	if (f != NULL) {
 		for (int i = 0; i < N; i++) {
-			fprintf(f, "%.12f %.12f %.12f\n", x[i], u[2 * i + 0], u[2 * i + 1]);
+			fprintf(f, "%.12f, %.12f, %.12f\n", x[i], u[2 * i + 0], u[2 * i + 1]);
 		}
 		fclose(f);
 		return 0;
@@ -102,8 +102,8 @@ int main(int argc, char *argv[])
 	const double xmax = 1;
 	const double tmax = 1;
 	const int N = 500;
-	const double uL[2] = { 0.7, 0.69 };
-	const double uR[2] = { 0.8, -0.1 };
+	const double uL[2] = { 0.7, 0.4 };
+	const double uR[2] = { 0.8, 0.1 };
 
 	/* Select the propper Eddington factor function */
 	get_chi = &m1_s2_get_chi_interp;
