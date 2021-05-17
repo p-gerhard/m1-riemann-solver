@@ -21,5 +21,6 @@ One example of how to use the solver is provided in `test` directory.
 A small python script using `numpy` and `matplotlib` packages is provided in `script` directory. 
 If you dont have the packages you can type :
 1. `cd script && pip3 install -r requirements.txt`
+
 Finally, to plot the data you can type :
 2. `python3 plot_script your_solution_data_file`
