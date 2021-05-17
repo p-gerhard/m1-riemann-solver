@@ -31,8 +31,8 @@ Edit the .tex file and you can use `./doc/Makefile` to produce the pdf. Here, tw
 
 ##### Output 1:
 
-![r1r2](doc/example_r1r2.png | width = 500) 
+![r1r2](doc/example_r1r2.png) 
 
 ##### Output 2:
 
-![s1s2](doc/example_s1s2.png | width = 500)
+![s1s2](doc/example_s1s2.png)
