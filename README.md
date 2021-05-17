@@ -24,4 +24,4 @@ If you dont have the packages you can type :
 
 Finally, to plot the data you can type :
 
-2. `python3 plot_script your_solution_data_file`
+2. `python3 plot_solution.py your_solution_data_file`
