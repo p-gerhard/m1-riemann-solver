@@ -23,4 +23,5 @@ If you dont have the packages you can type :
 1. `cd script && pip3 install -r requirements.txt`
 
 Finally, to plot the data you can type :
+
 2. `python3 plot_script your_solution_data_file`
