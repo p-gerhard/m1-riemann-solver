@@ -26,7 +26,7 @@ Finally, to plot the data you can type :
 
 2. `python3 plot_solution.py your_solution_data_file`
 
-A latex script `plot_latex_pgfplot.tex` is available in in `doc` directory. Edit the .tex file and type make to compile. Here the obtained results on two examples 
+A latex script `plot_latex_pgfplot.tex` is available in in `doc` directory. Edit the .tex file and type make to compile. Here the obtained results on two examples: 
 
 ![r1r2](doc/example_r1r2.png)
 
