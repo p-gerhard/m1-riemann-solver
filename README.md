@@ -15,7 +15,7 @@ This project uses CMake and the GNU Scientific Library (GSL). To build on your h
 5. `make` -- compile the code
 
 ### Example
-One example of how to use the solver is provided in `test` directory.
+One example of how to use the solver is provided in `./test/solve_example.c`.
 
 #### Plotting Examples
 A small python script using `numpy` and `matplotlib` packages is provided in `script` directory. 
