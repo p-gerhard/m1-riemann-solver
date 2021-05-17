@@ -27,7 +27,7 @@ Finally, to plot the data you can type :
 2. `python3 plot_solution.py your_solution_data_file`
 
 As an alternative, a latex script `plot_latex_pgfplot.tex` is available in `doc` directory. 
-Edit the .tex file and you can use `./doc/Makefile` to produce the pdf. Below, we display two examples for the M1 model build on ![alt text](https://render.githubusercontent.com/render/math?math=\mathbb{S}^2).
+Edit the .tex file and you can use `./doc/Makefile` to produce the pdf. Here, two examples for the M1 model build on ![alt text](https://render.githubusercontent.com/render/math?math=\mathbb{S}^2).
 
 ##### Output 1:
 
