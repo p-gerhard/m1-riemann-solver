@@ -1,5 +1,5 @@
 # M1-riemann-solver
-One dimensional Riemann solver for the first moment model (M1) with entropic closure.
+One-dimensional Riemann solver for the first moment model (M1) with entropic closure.
 
 ### Summary
 This solver is a C99 implementation of the research paper "*Entropy-Based Moment Closure for Kinetic Equations: Riemann Problem and Invariant Regions*" of J-F. Coulombel and T. Goudon (see: [doi.org](https://doi.org/10.1142/S0219891606000951 "doi.org")). It allows to solve exactly the one-dimensional Riemann problem for the first moment model (M1) with entropic closure. Two closures (Eddington factors) are provided:
